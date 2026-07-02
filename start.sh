@@ -26,6 +26,9 @@ log_error() {
     echo -e "${RED}[ERROR] $1${RESET}"
 }
 
+echo "Documentation > https://r.elxcloud.fr/web1"
+
+
 # Clean up temp directory
 echo "⏳ Nettoyage des fichiers temporaires"
 if rm -rf /home/container/tmp/*; then
