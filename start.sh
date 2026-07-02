@@ -1,4 +1,11 @@
 #!/bin/ash
+cat << 'EOF'
+  ______   _____________  _____  _________   ____  __  _____ 
+  / __/ /  / __/_  __/ _ \/  _/ |/_/ ___/ /  / __ \/ / / / _ \
+ / _// /__/ _/  / / / , _// /_>  </ /__/ /__/ /_/ / /_/ / // /
+/___/____/___/ /_/ /_/|_/___/_/|_|\___/____/\____/\____/____/ 
+                                                              
+EOF
 
 # Colors for output
 GREEN="\033[0;32m"
@@ -20,7 +27,7 @@ log_error() {
 }
 
 # Clean up temp directory
-echo "⏳ Cleaning up temporary files..."
+echo "⏳ Nettoyage des fichiers temporaires"
 if rm -rf /home/container/tmp/*; then
     log_success "Temporary files removed successfully."
 else
@@ -40,8 +47,9 @@ fi
 # NGINX if else WIP
 echo "⏳ Starting Nginx..."
 # Final message
-log_success "Web server is running. All services started successfully."
+log_success "Service Web démmaré !"
 /usr/sbin/nginx -c /home/container/nginx/nginx.conf -p /home/container/
+
 
 # Keep the container running (optional, depending on your container setup)
 tail -f /dev/null
